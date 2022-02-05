@@ -1,0 +1,118 @@
+.icon {
+    color: #aaa;
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+
+    .logo {
+        color:#333;
+        text-decoration: none;
+        font-size: 26px;
+        font-family: 'Courier New', Courier, monospace;
+
+        span{
+            color:#92E2EC;
+        }
+    }
+
+    .searchbar {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+
+        form {
+            position:relative;
+            width: 100%;
+
+            input {
+                width: 200px;
+                padding: 10px;
+                font-size: 16px;
+                outline: none;  
+                vertical-align: bottom;
+            }
+                
+            button {
+                margin-left:auto;
+                padding: 10px;
+                border: none;
+                border-left: 1px solid #ddd;
+                background-color: transparent;
+                cursor: pointer;
+
+                .icon {
+                    font-size: 16px;
+                }
+
+                :hover {
+                    color: #92E2EC;
+                }
+            }
+        }
+    }
+    
+    .bar-item {
+        margin: 0 1.2rem;
+        position: relative;
+        padding: 10px;
+
+        a {
+            padding: 15px 10px;  
+        } 
+
+        .link {
+            cursor: pointer;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            text-overflow:unset;
+            a {
+                color: #000000;
+            }
+        }
+
+        :hover .icon{
+            color: #92E2EC;
+        }
+
+        :hover + .card  {
+            display: block;
+        }
+
+        .card:hover {
+            display: block;
+        }
+        
+        .card {
+            display: none;
+            position: absolute;
+            right: -30px;
+            top: 40px;
+            z-index: 100;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            width: 100px;
+            background-color: white;
+            
+        }
+    }
+
+    .login-link {
+        font-size: 12px;
+        cursor: pointer;
+        margin: auto;
+    }
+
+}
