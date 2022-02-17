@@ -1,0 +1,43 @@
+@import 'styles';
+
+footer {
+    background-color: $dark-grey;
+    color: $light;
+    padding: 100px 0;
+
+    .left {
+        max-width: 250px;
+
+        p {
+            font-size: 16px;
+            margin: 24px 0;
+        }
+
+        .phone {
+            color: $primary-color;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+
+    .sitemap-item ul {
+        list-style: none;
+
+        a {
+            @extend .link-template;
+            margin: 20px 0;
+        } 
+    }
+
+    .contact p, a{
+        margin: 10px 0;
+    }
+
+    .contact a{
+        @extend .link-template;
+    }
+}
+
+.container {
+    width: 75%;
+}

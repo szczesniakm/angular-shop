@@ -1,0 +1,44 @@
+.logo {
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 52px;
+    font-family: 'Courier New', Courier, monospace;
+
+    span{
+        color: $primary-color;
+    }
+}
+
+.icon {
+    color: $dark-grey;
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.card {
+    border: 1px solid $light-grey;
+    border-radius: 3px;
+    min-width: 100px;
+    background-color: $light;
+}
+
+.link-template {
+    text-decoration: none;
+    color:$light;
+    display: block;
+    cursor: pointer;
+    
+    &:hover {
+        color: $primary-color;
+    }
+}

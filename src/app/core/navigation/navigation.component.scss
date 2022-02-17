@@ -1,36 +1,20 @@
-.icon {
-    color: #aaa;
-    font-size: 18px;
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-
-.flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+@import 'styles';
 
 nav {
     padding: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $light-grey;
+
+    .flex {
+        align-items: center;
+    }
 
     .logo {
-        color:#333;
-        text-decoration: none;
+        color:$dark-grey;
         font-size: 26px;
-        font-family: 'Courier New', Courier, monospace;
-
-        span{
-            color:#92E2EC;
-        }
     }
 
     .searchbar {
-        border: 1px solid #ddd;
+        border: 1px solid $light-grey;
         border-radius: 3px;
 
         form {
@@ -49,7 +33,7 @@ nav {
                 margin-left:auto;
                 padding: 10px;
                 border: none;
-                border-left: 1px solid #ddd;
+                border-left: 1px solid $light-grey;
                 background-color: transparent;
                 cursor: pointer;
 
@@ -58,12 +42,17 @@ nav {
                 }
 
                 :hover {
-                    color: #92E2EC;
+                    color: $primary-color;
                 }
             }
         }
     }
     
+    .right {
+        min-width: 260px;
+        justify-content: flex-end;
+    }
+
     .bar-item {
         margin: 0 1.2rem;
         position: relative;
@@ -76,7 +65,7 @@ nav {
         .link {
             cursor: pointer;
             padding: 10px 0;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid $light-grey;
             text-overflow:unset;
             a {
                 color: #000000;
@@ -84,7 +73,7 @@ nav {
         }
 
         :hover .icon{
-            color: #92E2EC;
+            color: $primary-color;
         }
 
         :hover + .card  {
@@ -100,12 +89,7 @@ nav {
             position: absolute;
             right: -30px;
             top: 40px;
-            z-index: 100;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            width: 100px;
-            background-color: white;
-            
+            z-index: 100;            
         }
     }
 
@@ -113,6 +97,10 @@ nav {
         font-size: 12px;
         cursor: pointer;
         margin: auto;
+
+        :hover {
+            text-decoration: underline;
+        }
     }
 
 }

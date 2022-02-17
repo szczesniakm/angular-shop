@@ -9,35 +9,33 @@
                 </form>
             </div>
             <div class="right flex">
-                <div *ngIf="logged; else loggedOut" class="bar-item">
-                    <a>
-                        <fa-icon [icon]="userIcon" class="icon"></fa-icon>
-                    </a>
-
-                    <div class="card">
-                        <div class="link">
-                            <a>My account</a>
-                        </div>
-                        <div class="link">
-                            <a>My orders</a>
-                        </div>
-                        <div class="link">
-                            <a (click)="logout()">Logout</a>
-                        </div>
-                    </div>
-
-                    
-                </div>
-               
-                <ng-template #loggedOut>
-                    <div class="login-link bar-item">
-                        <a (click)="login()">
-                            Log in / Sign up
+                <div class="bar-item">
+                    <ng-container *ngIf="logged; else loggedOut" >
+                        <a>
+                            <fa-icon [icon]="userIcon" class="icon"></fa-icon>
                         </a>
-                    </div>
-                </ng-template>
-               
-
+    
+                        <div class="card">
+                            <div class="link">
+                                <a>My account</a>
+                            </div>
+                            <div class="link">
+                                <a>My orders</a>
+                            </div>
+                            <div class="link">
+                                <a (click)="logout()">Logout</a>
+                            </div>
+                        </div>
+                    </ng-container>
+                    
+                    <ng-template #loggedOut>
+                        <div class="login-link">
+                            <a (click)="login()">
+                                Log in / Sign up
+                            </a>
+                        </div>
+                    </ng-template>                    
+                </div>
 
                 <div class="bar-item">
                     <a href="" class="cart">
