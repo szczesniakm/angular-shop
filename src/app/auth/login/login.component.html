@@ -1,0 +1,20 @@
+<div class="wrapper">
+    <div class="card">
+        <a href="#" class="logo">shop<span>.</span></a>
+
+        <form class="flex" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+            <div class="form-input">
+                <label for="email">Email:</label>
+                <input formControlName="email"  placeholder="Email" required>
+                <label class="error" *ngIf="email.invalid && email.touched">Email address is invalid.</label>
+            </div>
+            <div class="form-input">
+                <label for="password">Password:</label>
+                <input formControlName="password" type="password" placeholder="Password" required>
+                <label class="error" *ngIf="password.invalid && password.touched">Password is invalid.</label>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+</div>

@@ -1,0 +1,71 @@
+@import 'styles';
+
+.wrapper {
+    position:absolute;
+    top:0;
+    left: 0;
+    background-color: $light-grey;
+    height: 100vh;
+    width: 100%;
+}
+
+.card {
+    margin: 0 auto;
+    padding: 50px 0;
+    width: 45%;
+    margin-top: 150px;
+    text-align: center;
+    border-radius: 10px;
+
+    .logo {
+        color: $dark-grey;
+        margin-bottom: 30px auto;
+        display: block;
+    }
+
+    form {
+        width: auto;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        text-align: left;
+        margin-top: 50px;
+        padding: 40px;
+        .form-input {
+            margin: 10px 0;
+        }
+
+        input {
+            border: 1px solid $light-grey;
+            width: 300px;
+            font-size: 18px;
+            padding: 12px 10px;
+        }
+
+        input, label, button {
+            margin: 5px 0;
+        }
+
+        label {
+            display: block;
+        }
+
+        button {
+            font-size: 22px;
+            margin-top:40px;
+            background-color: $dark-grey;
+            padding: 12px 22px;
+            color: $light;
+            font-weight: 700;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: $primary-color;
+            }
+        }
+
+        .error {
+            background-color: rgb(246, 156, 156);
+        }
+    }
+}
