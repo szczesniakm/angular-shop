@@ -10,7 +10,7 @@
             </div>
             <div class="right flex">
                 <div class="bar-item">
-                    <ng-container *ngIf="logged; else loggedOut" >
+                    <ng-container *ngIf="loggedIn | async; else loggedOut" >
                         <a>
                             <fa-icon [icon]="userIcon" class="icon"></fa-icon>
                         </a>
@@ -30,7 +30,7 @@
                     
                     <ng-template #loggedOut>
                         <div class="login-link">
-                            <a (click)="login()">
+                            <a routerLink="/login">
                                 Log in / Sign up
                             </a>
                         </div>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="bar-item">
-                    <a href="" class="cart">
+                    <a class="cart">
                         <fa-icon [icon]="cartIcon" class="icon"></fa-icon>
                     </a>
 

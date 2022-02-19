@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faSearch, faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-navigation',
@@ -11,17 +14,19 @@ export class NavigationComponent implements OnInit {
   userIcon = faUser;
   searchIcon = faSearch;
 
-  logged: boolean = false;
+  loggedIn: Observable<boolean>;
   
-  constructor() {  }
+  constructor(
+    private router: Router,
+    private authService: AuthenticationService) 
+  {
+    this.loggedIn = authService.isAuthenticatedObservable();
+  }
 
   ngOnInit(): void { }
 
-  login(): void {
-    this.logged = true;
-  }
-
-  logout(): void {
-    this.logged = false;
+  async logout(): Promise<void> {
+    await this.authService.logout();
+    this.router.navigate(['login']);
   }
 }
