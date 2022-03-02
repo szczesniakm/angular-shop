@@ -1,7 +1,17 @@
 <div class="wrapper">
     <div class="card">
         <a href="#" class="logo">shop<span>.</span></a>
-
+        <div>
+            <div>
+                <a routerLink="/login" routerLinkActive="active">Login</a>
+            </div>
+            <div>
+                <a routerLink="/register" routerLinkActive="active">Register</a>
+            </div>
+        </div>
+        <div class="errorMessages">
+            <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+        </div>
         <form class="flex" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
             <div class="form-input">
                 <label for="email">Email:</label>

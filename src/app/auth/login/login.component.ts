@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpError } from 'src/app/core/models/http-error';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
   });
 
   redirectTo?: string;
+  errorMessage?: string;
 
   constructor(
     private authService: AuthenticationService,
@@ -38,7 +40,16 @@ export class LoginComponent implements OnInit {
   }
 
   async onLoginSubmit(): Promise<void> {
-    await this.authService.login(this.email.value, this.password.value);
-    this.router.navigate([this.redirectTo ? this.redirectTo : '/']);
+    if(!this.loginForm.valid) 
+      return;
+      
+    try {
+      await this.authService.login(this.email.value, this.password.value);
+      this.router.navigate([this.redirectTo ? this.redirectTo : '/']);
+    } catch (error) {
+      console.log("catched");
+      if(error instanceof HttpError)
+        this.errorMessage = error.message;
+    }
   }
 }

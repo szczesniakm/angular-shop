@@ -23,13 +23,17 @@
         display: block;
     }
 
+    .errorMessages {
+        height: 50px;
+        line-height: 50px;
+    }
+
     form {
         width: auto;
         flex-direction: column;
         justify-items: center;
         align-items: center;
         text-align: left;
-        margin-top: 50px;
         padding: 40px;
         .form-input {
             margin: 10px 0;
@@ -63,9 +67,10 @@
                 background-color: $primary-color;
             }
         }
+    }
 
-        .error {
-            background-color: rgb(246, 156, 156);
-        }
+    .error {
+        background-color: rgb(246, 156, 156);
+        margin: auto;
     }
 }
